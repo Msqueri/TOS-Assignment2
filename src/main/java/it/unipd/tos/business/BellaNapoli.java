@@ -13,7 +13,8 @@ public class BellaNapoli implements RestaurantBill {
 		return items.stream().mapToDouble(MenuItem::getPrice).sum();
 		}
 	
-	public double getOrderPrice(List<MenuItem> itemsOrdered) throws RestaurantBillException {
+	public double getOrderPrice(List<MenuItem> itemsOrdered) 
+			throws RestaurantBillException {
 		return 0;	
 	}
 }
