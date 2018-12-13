@@ -36,10 +36,16 @@ public class BellaNapoli implements RestaurantBill {
     //metodo principale
     public double getOrderPrice(List<MenuItem> itemsOrdered) 
             throws RestaurantBillException {
+        if(itemsOrdered.size()>20) {
+            throw new RestaurantBillException();
+        }
+        
         double total= gettotal(itemsOrdered);
+        
         if(getpizzanumber(itemsOrdered)>10) {
             total -= getlowest(itemsOrdered);
         }
+        
         if(total>100) {
             return total-=(total/100)*5;
         }

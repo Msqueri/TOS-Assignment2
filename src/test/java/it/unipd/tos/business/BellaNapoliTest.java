@@ -60,6 +60,24 @@ public class BellaNapoliTest {
         assertEquals(144-7.2, bill.getOrderPrice(BillList),0);
     }
     
+    @Test
+    public void twentyordersTest() throws RestaurantBillException {
+        List<MenuItem> BillList = new ArrayList<>(Arrays.asList(Item1, Item3, Item5, Item1, Item3,
+                                                                Item5, Item1, Item3, Item5, Item1,
+                                                                Item3, Item4, Item4, Item4, Item4,
+                                                                Item5, Item1, Item3, Item5, Item1,
+                                                                Item5, Item1, Item3, Item5, Item1,
+                                                                Item5, Item1, Item3, Item5, Item1));
+        try {
+            bill.getOrderPrice(BillList);
+        } catch(RestaurantBillException exe) {
+            assertEquals("non si possono avere più di 20 ordinazioni"
+                    , exe.geterror(),0);
+        }
+    }
+    
+    
+    
     
     
     
