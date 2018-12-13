@@ -23,6 +23,7 @@ public class BellaNapoliTest {
     private MenuItem Item3=  new MenuItem(itemType.PIZZA, "terzo", 15.5);
     private MenuItem Item4=  new MenuItem(itemType.PRIMO, "quarto", 30);
     private MenuItem Item5=  new MenuItem(itemType.PIZZA, "quinto", 1);
+    private MenuItem Pizzatest = new MenuItem(itemType.PRIMO, "test", 0);
     
     @Test
     public void emptyTest() throws RestaurantBillException {
@@ -34,6 +35,14 @@ public class BellaNapoliTest {
     public void gettotalTest() throws RestaurantBillException {
         List<MenuItem> BillList = new ArrayList<>(Arrays.asList(Item1, Item2, Item3, Item4, Item5));
         assertEquals(71, bill.getOrderPrice(BillList),0);
+    }
+    
+    @Test
+    public void getlowestTest() throws RestaurantBillException {
+        List<MenuItem> BillList = new ArrayList<>(Arrays.asList(Item1, Item3, Item5, Item1, Item3,
+                                                                Item5, Item1, Item3, Item5, Item1,
+                                                                Item3, Pizzatest));
+        assertEquals(84, bill.getOrderPrice(BillList),0);
     }
 
 }
