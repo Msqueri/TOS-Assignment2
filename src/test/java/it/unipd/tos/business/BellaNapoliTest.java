@@ -44,5 +44,24 @@ public class BellaNapoliTest {
                                                                 Item3, Pizzatest));
         assertEquals(84, bill.getOrderPrice(BillList),0);
     }
+    
+    @Test
+    public void morethanonehundredTest() throws RestaurantBillException {
+        List<MenuItem> BillList = new ArrayList<>(Arrays.asList(Item1, Item2, Item3, Item4, Item5,
+                                                                Item1, Item2, Item3, Item4, Item5));
+        assertEquals(142-7.1, bill.getOrderPrice(BillList),0);
+    }
+    
+    @Test
+    public void getlowestandmorethanonehundredTest() throws RestaurantBillException {
+        List<MenuItem> BillList = new ArrayList<>(Arrays.asList(Item1, Item3, Item5, Item1, Item3,
+                                                                Item5, Item1, Item3, Item5, Item1,
+                                                                Item3, Item4, Item4));
+        assertEquals(144-7.2, bill.getOrderPrice(BillList),0);
+    }
+    
+    
+    
+    
 
 }
