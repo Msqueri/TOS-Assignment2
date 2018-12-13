@@ -6,7 +6,7 @@ cache:
     - $HOME/.m2
 script:
   - mvn clean install
-  - mvn -DrepoToken=$TOKEN jacoco:report coveralls:report
+  - mvn -DrepoToken=$COVERALLSTOKEN jacoco:report coveralls:report
 
 notifications:
   email:
