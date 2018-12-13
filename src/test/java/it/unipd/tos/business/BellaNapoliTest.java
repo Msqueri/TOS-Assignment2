@@ -72,7 +72,7 @@ public class BellaNapoliTest {
             bill.getOrderPrice(BillList);
         } catch(RestaurantBillException exe) {
             assertEquals("non si possono avere più di 20 ordinazioni"
-                    , exe.geterror(),0);
+                    , exe.geterror());
         }
     }
     
