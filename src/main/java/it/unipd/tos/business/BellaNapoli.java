@@ -29,8 +29,8 @@ public class BellaNapoli implements RestaurantBill {
         OptionalDouble lowest= items.stream()
                 .filter(MenuItem::isPizza)
                 .mapToDouble(MenuItem::getPrice).min();
-        if (lowest.isPresent()) return lowest.getAsDouble();
-        else return 0;
+        if (lowest.isPresent()) { return lowest.getAsDouble() };
+        else { return 0 };
     }
     public double getOrderPrice(List<MenuItem> itemsOrdered) 
             throws RestaurantBillException {
@@ -38,7 +38,7 @@ public class BellaNapoli implements RestaurantBill {
         if(getpizzanumber(itemsOrdered)>10) {
             return total - getlowest(itemsOrdered);
         }
-        else return total;
+        else { return total; }
         
     }
 }
