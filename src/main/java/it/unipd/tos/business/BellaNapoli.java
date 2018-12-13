@@ -30,7 +30,7 @@ public class BellaNapoli implements RestaurantBill {
                 .filter(MenuItem::isPizza)
                 .mapToDouble(MenuItem::getPrice).min();
         if (lowest.isPresent()) { return lowest.getAsDouble(); }
-        else { return 0; }
+        //else { return 0; } never enters here
     }
     
     //metodo principale
