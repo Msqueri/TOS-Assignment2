@@ -29,8 +29,9 @@ public class BellaNapoli implements RestaurantBill {
         OptionalDouble lowest= items.stream()
                 .filter(MenuItem::isPizza)
                 .mapToDouble(MenuItem::getPrice).min();
-        if (lowest.isPresent()) { return lowest.getAsDouble(); }
-        //else { return 0; } never enters here
+        return lowest.getAsDouble();
+        //no lowest.isPresent() because it will always enter here with 
+		//at least 10 elements because getpizzanumber()
     }
     
     //metodo principale
