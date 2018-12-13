@@ -33,7 +33,7 @@ public class BellaNapoliTest {
     @Test
     public void gettotalTest() throws RestaurantBillException {
         List<MenuItem> BillList = new ArrayList<>(Arrays.asList(Item1, Item2, Item3, Item4, Item5));
-        assertEquals(61, bill.getOrderPrice(BillList),0);
+        assertEquals(71, bill.getOrderPrice(BillList),0);
     }
 
 }
