@@ -25,24 +25,24 @@
   
   <build>
       <plugins> 
-		    <plugin>
-			      <groupId>org.apache.maven.plugins</groupId>
-			      <artifactId>maven-checkstyle-plugin</artifactId>
-		  	    <version>3.0.0</version>
-		  	    <configuration>
-		  		     <configLocation>checkstyle.xml</configLocation>
-	          	 <consoleOutput>true</consoleOutput>
-	          	 <failsOnError>true</failsOnError>
-		  	    </configuration>
-			      <executions>
-		     		  <execution>
-		       		  	<phase>package</phase>
-		       		  	<goals>
-						        <goal>checkstyle</goal>
-		       			  </goals>
-				      </execution>
-			      </executions>
-		    </plugin>
+          <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+                <version>3.0.0</version>
+                <configuration>
+                     <configLocation>checkstyle.xml</configLocation>
+                     <consoleOutput>true</consoleOutput>
+                     <failsOnError>true</failsOnError>
+                </configuration>
+                <executions>
+                     <execution>
+                          <phase>package</phase>
+                               <goals>
+                                    <goal>checkstyle</goal>
+                               </goals>
+                     </execution>
+                </executions>
+           </plugin>
 
         <plugin>
           <groupId>org.jacoco</groupId>
@@ -71,7 +71,7 @@
           <version>4.3.0</version>
         </plugin>
     
-	    </plugins>
+      </plugins>
   </build>
 
   <reporting>
