@@ -26,7 +26,7 @@ public class BellaNapoliTest {
     private MenuItem Pizzatest = new MenuItem(itemType.PRIMO, "test", 0);
     
     @Test
-    public void emptyTest() throws RestaurantBillException {
+    public void emptybillTest() throws RestaurantBillException {
         List<MenuItem> empty = new ArrayList<>();
         assertEquals(0, bill.getOrderPrice(empty),0);
     }
@@ -38,30 +38,30 @@ public class BellaNapoliTest {
     }
     
     @Test
-    public void getlowestTest() throws RestaurantBillException {
+    public void getlowestpizzadiscountTest() throws RestaurantBillException {
         List<MenuItem> BillList = new ArrayList<>(Arrays.asList(Item1, Item3, Item5, Item1, Item3,
                                                                 Item5, Item1, Item3, Item5, Item1,
                                                                 Item3, Pizzatest));
-        assertEquals(84, bill.getOrderPrice(BillList),0);
+        assertEquals(85-1, bill.getOrderPrice(BillList),0);
     }
     
     @Test
-    public void morethanonehundredTest() throws RestaurantBillException {
+    public void morethanonehundreddiscountTest() throws RestaurantBillException {
         List<MenuItem> BillList = new ArrayList<>(Arrays.asList(Item1, Item2, Item3, Item4, Item5,
                                                                 Item1, Item2, Item3, Item4, Item5));
         assertEquals(142-7.1, bill.getOrderPrice(BillList),0);
     }
     
     @Test
-    public void getlowestandmorethanonehundredTest() throws RestaurantBillException {
+    public void doublediscountTest() throws RestaurantBillException {
         List<MenuItem> BillList = new ArrayList<>(Arrays.asList(Item1, Item3, Item5, Item1, Item3,
                                                                 Item5, Item1, Item3, Item5, Item1,
                                                                 Item3, Item4, Item4));
-        assertEquals(144-7.2, bill.getOrderPrice(BillList),0);
+        assertEquals(145-1-7.2, bill.getOrderPrice(BillList),0);
     }
     
     @Test
-    public void twentyordersTest() throws RestaurantBillException {
+    public void twentyordersexceptionTest() throws RestaurantBillException {
         List<MenuItem> BillList = new ArrayList<>(Arrays.asList(Item1, Item3, Item5, Item1, Item3,
                                                                 Item5, Item1, Item3, Item5, Item1,
                                                                 Item3, Item4, Item4, Item4, Item4,
